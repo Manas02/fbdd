@@ -1,5 +1,6 @@
 """Error classes."""
 
+
 class InvalidSMILESError(Exception):
     """Error raised when Invalid SMILES are encountered"""
 
