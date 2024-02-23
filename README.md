@@ -1,7 +1,5 @@
 # FragmentBERT
 
-![](./idea.png)
-
 Sure, here's how you could write a README.md detailing the `Molecule` and `Fragment` classes:
 
 # Molecule and Fragment Classes
@@ -21,7 +19,6 @@ The `Molecule` class represents a chemical molecule and provides functionality f
 ### Usage
 
 ```python
-from rdkit import Chem
 from fbdd import Molecule
 
 # Create a molecule from a SMILES string
@@ -60,7 +57,3 @@ fragment = Fragment(mol)
 smarts = fragment.to_smarts()
 print("SMARTS:", smarts)
 ```
-
-## Dependencies
-
-- [RDKit](https://www.rdkit.org/): A collection of cheminformatics and machine learning tools.
