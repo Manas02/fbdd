@@ -14,8 +14,7 @@ class Fragment:
     mol: Chem.Mol
 
     def to_smarts(self) -> str | InvalidSMARTSError:
-        try:
-            smarts = Chem.MolToSmarts(self.mol)
+        smarts = Chem.MolToSmarts(self.mol)
+        if smarts:
             return smarts
-        except Exception as e:
-            raise InvalidSMARTSError(e)
+        raise InvalidSMARTSError(self.mol)
