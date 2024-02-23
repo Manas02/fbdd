@@ -1,2 +1,8 @@
-# fbdd
-FragmentBERT under development
+# FragmentBERT
+
+![](./idea.png)
+
+### `Molecule` class
+
+
+### `Fragment` class
