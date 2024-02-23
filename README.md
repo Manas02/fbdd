@@ -1,12 +1,10 @@
 # FragmentBERT
 
-Sure, here's how you could write a README.md detailing the `Molecule` and `Fragment` classes:
-
-# Molecule and Fragment Classes
+## Molecule and Fragment Classes
 
 This repository contains Python code for the `Molecule` and `Fragment` classes, which are designed to handle molecules and their fragments in the context of computational chemistry.
 
-## Molecule Class
+### Molecule Class
 
 The `Molecule` class represents a chemical molecule and provides functionality for handling molecule-related operations such as converting molecules to SMILES (Simplified Molecular Input Line Entry System) notation, fragmenting molecules, and hashing/equality comparison.
 
@@ -35,7 +33,7 @@ for fragment in fragments:
     print("Fragment SMARTS:", fragment.to_smarts())
 ```
 
-## Fragment Class
+### Fragment Class
 
 The `Fragment` class represents a fragment of a chemical molecule and provides functionality for handling fragment-related operations such as converting fragments to SMARTS notation.
 
