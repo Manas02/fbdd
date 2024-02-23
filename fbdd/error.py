@@ -4,4 +4,3 @@ class InvalidSMILESError(Exception):
 
 class InvalidSMARTSError(Exception):
     """Error raised when Invalid SMARTS is encountered"""
-

@@ -14,12 +14,12 @@
    limitations under the License.
 """
 
-__version__ = '0.1.0'
-__author__ = 'Manas Mahale'
-__email__ = 'manas.mahale@bcp.edu.in'
-__license__ = 'Apache License 2.0'
-__url__ = 'https://github.com/Manas02/fbdd'
-__keywords__ = ['AI', 'Machine Learning', 'BERT', 'Cheminformatics']
+__version__ = "0.1.0"
+__author__ = "Manas Mahale"
+__email__ = "manas.mahale@bcp.edu.in"
+__license__ = "Apache License 2.0"
+__url__ = "https://github.com/Manas02/fbdd"
+__keywords__ = ["AI", "Machine Learning", "BERT", "Cheminformatics"]
 
 from .molecule import Molecule
 from .error import InvalidSMILESError, InvalidSMARTSError

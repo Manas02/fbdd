@@ -17,4 +17,4 @@ class Fragment:
         smarts = Chem.MolToSmarts(self.mol)
         if smarts:
             return smarts
-        raise InvalidSMARTSError(self.mol)
+        raise InvalidSMARTSError()

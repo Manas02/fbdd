@@ -1,4 +1,5 @@
 """Molecule class."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -24,9 +25,12 @@ class Molecule:
         return Chem.MolFromSmiles(self.smiles)
 
     def fragment(self) -> list[Fragment]:
-        brics_bonds: list[tuple[tuple[int, int], tuple[str, str]]] = list(BRICS.FindBRICSBonds(self.mol))
-        bonds: list[tuple[tuple[int, int], tuple[str, str]]] = [(i[0], (str(n + 1), str(n + 1))) for n, i in
-                                                                enumerate(brics_bonds)]
+        brics_bonds: list[tuple[tuple[int, int], tuple[str, str]]] = list(
+            BRICS.FindBRICSBonds(self.mol)
+        )
+        bonds: list[tuple[tuple[int, int], tuple[str, str]]] = [
+            (i[0], (str(n + 1), str(n + 1))) for n, i in enumerate(brics_bonds)
+        ]
         mol_frags: Chem.Mol = BRICS.BreakBRICSBonds(self.mol, bonds=bonds)
         mol_frags: list[Chem.Mol] = Chem.GetMolFrags(mol_frags, asMols=True)
         frags: list[Fragment] = [Fragment(mol=mol) for mol in mol_frags]
