@@ -1,5 +1,7 @@
 # FragmentBERT
 
+![](./idea.png)
+
 ## Molecule and Fragment Classes
 
 This repository contains Python code for the `Molecule` and `Fragment` classes, which are designed to handle molecules and their fragments in the context of computational chemistry.
