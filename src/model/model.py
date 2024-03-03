@@ -25,19 +25,18 @@ tokenizer.pad_token = "[PAD]"
 tokenizer.sep_token = "[SEP]"
 tokenizer.cls_token = "[CLS]"
 
-vocab_size = tokenizer.get_vocab_size()
 max_length = 128
 
 # Load datasets
 train_dataset = LineByLineTextDataset(
     tokenizer=tokenizer,
-    file_path="../../data/final/train_encoded_moses.smi",
+    file_path="../../data/final/sampled/sampled_2M_train.smi",
     block_size=128,
 )
 
 eval_dataset = LineByLineTextDataset(
     tokenizer=tokenizer,
-    file_path="../../data/final/eval_encoded_moses.smi",
+    file_path="../../data/final/sampled/sampled_100K_eval.smi",
     block_size=128,
 )
 
@@ -47,7 +46,7 @@ data_collator = DataCollatorForLanguageModeling(
 )
 
 # Model configuration
-model_config = BertConfig(vocab_size=vocab_size, max_position_embeddings=max_length)
+model_config = BertConfig(vocab_size=30000, max_position_embeddings=max_length)
 model = BertForMaskedLM(config=model_config)
 
 # Model training arguments
@@ -56,9 +55,9 @@ training_args = TrainingArguments(
     evaluation_strategy="steps",
     overwrite_output_dir=True,
     num_train_epochs=5,
-    per_device_train_batch_size = 256,
-    gradient_accumulation_steps=16,
-    per_device_eval_batch_size = 256,
+    per_device_train_batch_size =128,
+    gradient_accumulation_steps=8,
+    per_device_eval_batch_size = 128,
     logging_steps=1,
     save_steps=1,
     load_best_model_at_end=True,
