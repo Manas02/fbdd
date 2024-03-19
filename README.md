@@ -1,4 +1,4 @@
-# FragmentBERT
+# Masked Language Models are Fragment Based Drug Designers
 
 ![](./idea.png)
 
